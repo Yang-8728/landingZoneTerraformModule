@@ -10,5 +10,12 @@ variable "vpc" {
     vpc-description = optional(string, " vpc created by terraform ")
     vpc-enterprise-project = optional(string, "")
     tags = optional(map(any))
+
+    # Subnets associate to VPCs
+    subnets = list(object({
+      subnet-name = string
+      subnet-cidr = string
+      subnet-description = optional(string, " subnet created by terraform ")
+    }))
   }))
 }
