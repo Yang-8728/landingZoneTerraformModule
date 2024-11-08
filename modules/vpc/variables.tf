@@ -5,17 +5,17 @@ variable "vpc" {
   description = "VPCs attributes"
   type = list(object({
     # Default VPC attributes
-    vpc-name = string
-    vpc-cidr = string
-    vpc-description = optional(string, " vpc created by terraform ")
-    vpc-enterprise-project = optional(string, "")
-    tags = optional(map(any))
+    vpc_name               = string
+    vpc_cidr               = string
+    vpc_description        = optional(string, " vpc resources created by custom module ")
+    vpc_enterprise_project = optional(string, "")
+    tags                   = optional(map(any))
 
     # Subnets associate to VPCs
     subnets = list(object({
-      subnet-name = string
-      subnet-cidr = string
-      subnet-description = optional(string, " subnet created by terraform ")
+      subnet_name        = string
+      subnet_cidr        = string
+      subnet_description = optional(string, " subnet resources created by custom module ")
     }))
   }))
 }
