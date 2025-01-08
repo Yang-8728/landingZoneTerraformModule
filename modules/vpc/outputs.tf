@@ -11,3 +11,7 @@ output "vpc-name" {
     for i, v in huaweicloud_vpc.this : i => v.name
   }
 }
+
+output "local-body" {
+  value = local.vpc_subnets
+}
